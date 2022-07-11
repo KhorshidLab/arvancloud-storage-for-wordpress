@@ -137,7 +137,7 @@ class Storage {
 
 		$this->loader->add_filter( 'add_attachment', $plugin_admin, 'upload_media_to_storage', 10, 1 );
 		$this->loader->add_filter( 'wp_generate_attachment_metadata', $plugin_admin, 'upload_image_to_storage', 10, 1 );
-		$this->loader->add_filter( 'wp_get_attachment_url', $plugin_admin, 'media_library_url_rewrite' );
+		$this->loader->add_filter( 'wp_get_attachment_url', $plugin_admin, 'media_library_url_rewrite', 10, 2 );
 		$this->loader->add_filter( 'bulk_actions-upload', $plugin_admin, 'bulk_actions_upload' );
 		$this->loader->add_filter( 'handle_bulk_actions-upload', $plugin_admin, 'handle_bulk_actions_upload', 10, 3 );
 		$this->loader->add_filter( 'media_row_actions', $plugin_admin, 'add_media_row_actions', 10, 3 );

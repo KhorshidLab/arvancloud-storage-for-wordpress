@@ -625,19 +625,18 @@ class Admin {
 	 * @param mixed $url 
 	 * @return void
 	 */
-	public function media_library_url_rewrite( $url ) {
+	public function media_library_url_rewrite( $url, $attachment_id ) {
 
-		$post_id 		  = attachment_url_to_postid( $url );
-		$storage_file_url = get_post_meta( $post_id, 'acs_storage_file_url', true );
+		$storage_file_url = get_post_meta( $attachment_id, 'acs_storage_file_url', true );
 
 		if( !empty( $storage_file_url ) ) {
 			$file_name = basename( $url );
 			$url 	   = esc_url( $storage_file_url.$file_name );
 
 			// Show private files in admin
-			if ( is_admin() && get_post_meta( $post_id, 'acs_acl', true ) == 'private' ) {
+			if ( is_admin() && get_post_meta( $attachment_id, 'acs_acl', true ) == 'private' ) {
 
-				return $this->get_object_private_url( $post_id, $file_name, 8640);
+				return $this->get_object_private_url( $attachment_id, $file_name, 8640);
 			}
 		}
 
