@@ -458,11 +458,6 @@ class Admin {
 	 */
 	public function upload_image_to_storage( $args ) {
 
-		// check if this is image
-		if( !isset($args['id']) || !wp_attachment_is_image( $args['id'] ) ) {
-			return;
-		}
-
 		$upload_dir = wp_upload_dir();
 		$basename	= basename( $args['file'] );
 		$path 		= str_replace( $basename, "", $args['file'] );
