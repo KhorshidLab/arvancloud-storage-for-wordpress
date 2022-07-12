@@ -131,6 +131,10 @@
 			var expiry = $('#arvancloud-storage-acl-expiry').val();
 			var post_id = $('input[name=acl-post-id]').val();
 
+			if (expiry == 'custom') {
+				expiry = $('#arvancloud-storage-acl-expiry-custom').val() * 60;
+			}
+
 			$.ajax({
 				url: acs_media.ajax_url,
 				data: {
@@ -145,7 +149,14 @@
 			})
 		})
 
+		$('#arvancloud-storage-acl-expiry').on('change', function() {
 
+			if ($(this).val() == 'custom') {
+				$('#arvancloud-storage-acl-expiry-custom').parent().show();
+			} else {
+				$('#arvancloud-storage-acl-expiry-custom').parent().hide();
+			}
+		})
 
 	});
 

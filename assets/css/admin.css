@@ -344,6 +344,10 @@ a {
 	padding: 0 10px;
 }
 
+#arvancloud-storage-ACL-metabox .inside .form-group {
+    margin-bottom: 10px;
+}
+
 .acl-url-generator-holder {
     text-align: right;
     line-height: 1.9;

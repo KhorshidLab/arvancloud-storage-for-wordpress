@@ -1324,7 +1324,14 @@ class Admin {
 					<option value="720"><?php _e('12 hours', 'arvancloud-object-storage'); ?></option>
 					<option value="1440"><?php _e('1 day', 'arvancloud-object-storage'); ?></option>
 					<option value="10080"><?php _e('1 week', 'arvancloud-object-storage'); ?></option>
+					<option value="custom"><?php _e('Custom', 'arvancloud-object-storage'); ?></option>
 				</select>
+			</div>
+			<div class="form-group" style="display: none;">
+				<label for="arvancloud-storage-acl-expiry-custom">
+					<?php _e( 'Custom expiration by the hour', 'arvancloud-object-storage' ); ?>
+				</label>
+				<input type="number" class="form-control" id="arvancloud-storage-acl-expiry-custom" name="arvancloud-storage-acl-expiry-custom" min="1" max="168" value="1">
 				<input type="hidden" name="acl-post-id" value="<?php echo $post_id ?>">
 			</div>
 			<div class="acl-url-generator-holder">
