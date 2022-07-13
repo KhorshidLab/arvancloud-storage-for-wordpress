@@ -635,9 +635,28 @@ class Admin {
 			}
 		}
 
-		
+
 		return $url;
+	}
+
+	public function attachment_image_src_filter( $image, $attachment_id, $size) {
+
+		$storage_file_url = get_post_meta( $attachment_id, 'acs_storage_file_url', true );
 		
+		if( empty( $storage_file_url ) ) {
+			return $image;
+		}
+		
+		if ( isset($image[0]) ) {
+			$parsed_url[0] = parse_url($image[0]);
+			$path = '/' . $this->bucket_name . '/';
+			if ( isset($parsed_url[0]['query']) && isset($parsed_url[0]['path']) && substr($parsed_url[0]['path'], 0, strlen($path)) === $path ) {
+				return $image;
+			}
+			$image[0] = $this->media_library_url_rewrite( $image[0], $attachment_id );
+		}
+
+		return $image;
 	}
 
 	protected function generate_private_url( $file_key, $expiry ) {
@@ -672,24 +691,30 @@ class Admin {
 	}
 
 	protected function get_object_private_url( $post_id, $file_key, $expiry ) {
-
-		$last_update = get_post_meta( $post_id, 'acs_presigned_url_last_update', true );
-
-		if ( !empty($last_update) && strtotime($last_update) > strtotime("-1 day") ) {
-			return get_post_meta( $post_id, 'acs_presigned_url', true );
+		$presigned_url = get_post_meta( $post_id, 'acs_presigned_url', true );
+		if ( isset( $presigned_url[$file_key] ) &&
+			!empty($presigned_url[$file_key]['last_update']) &&
+			strtotime($presigned_url[$file_key]['last_update']) > strtotime("-1 day")
+			) {
+			return $presigned_url[$file_key]['url'];
 		}
 
 		$private_url = $this->generate_private_url( $file_key, $expiry );
 
-		if ( !empty( $private_url ) ) {
-			update_post_meta( $post_id, 'acs_presigned_url', $private_url );
-			update_post_meta( $post_id, 'acs_presigned_url_last_update', date( 'Y-m-d H:i:s' ) );
-
-			return $private_url;
+		if ( empty( $private_url ) ) {
+			return false;
 		}
 
+		$presigned_url = empty( $presigned_url ) ? array() : (array)$presigned_url;
+		
+		$presigned_url[$file_key] = array(
+			'url' => $private_url,
+			'last_update' => date('Y-m-d H:i:s'),
+		);
+		update_post_meta( $post_id, 'acs_presigned_url', $presigned_url );
 
-		return false;
+		return $private_url;
+
 	}
 
 	/**
