@@ -303,3 +303,63 @@ a {
     flex-direction: column;
     align-items: stretch;
 }
+
+#arvancloud-storage-metabox .inside {
+	padding-top: 6px;
+}
+
+.post-php.post-type-attachment .ar-copy {
+	display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 2.15384615;
+    min-height: 30px;
+    margin: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+	color: #2271b1;
+    border-color: #2271b1;
+    background: #f6f7f7;
+    vertical-align: top;
+}
+
+.post-php.post-type-attachment .ar-copy:hover {
+	background: #f0f0f1;
+    border-color: #0a4b78;
+    color: #0a4b78;
+}
+
+#arvancloud-storage-ACL-metabox .inside {
+    padding: 0;
+}
+
+#arvancloud-storage-ACL-metabox .inside .form-group,
+.arvancloud-storage-generated_urls {
+	padding: 0 10px;
+}
+
+#arvancloud-storage-ACL-metabox .inside .form-group {
+    margin-bottom: 10px;
+}
+
+.acl-url-generator-holder {
+    text-align: right;
+    line-height: 1.9;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding: 10px;
+    clear: both;
+    border-top: 1px solid #dcdcde;
+    background: #f6f7f7;
+}
+
+.arvancloud-storage-generated_urls li {
+    margin-bottom: 10px;
+}

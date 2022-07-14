@@ -126,6 +126,37 @@
 			}, 3e3), wp.a11y.speak(l("Site information has been copied to your clipboard."))
 		})
 
+		$('#arvancloud-storage-acl-url-generator-button').on('click', function(e) {
+			e.preventDefault();
+			var expiry = $('#arvancloud-storage-acl-expiry').val();
+			var post_id = $('input[name=acl-post-id]').val();
+
+			if (expiry == 'custom') {
+				expiry = $('#arvancloud-storage-acl-expiry-custom').val() * 60;
+			}
+
+			$.ajax({
+				url: acs_media.ajax_url,
+				data: {
+					'action': 'ar_generate_acl_url',
+					'expiry': expiry,
+					'post_id': post_id,
+					'_nonce': acs_media.nonces.generate_acl_url
+				},
+				success:function(data) {
+					$('.arvancloud-storage-generated_urls ul').append(`<li><input type="text" class="widefat urlfield" readonly="readonly" value="${data.data.url}"><span>${data.data.expiry}</span></li>`);
+				}
+			})
+		})
+
+		$('#arvancloud-storage-acl-expiry').on('change', function() {
+
+			if ($(this).val() == 'custom') {
+				$('#arvancloud-storage-acl-expiry-custom').parent().show();
+			} else {
+				$('#arvancloud-storage-acl-expiry-custom').parent().hide();
+			}
+		})
 
 	});
 
