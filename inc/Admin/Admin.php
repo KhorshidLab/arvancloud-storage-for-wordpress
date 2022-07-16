@@ -74,7 +74,7 @@ class Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, ACS_PLUGIN_ROOT_URL . 'assets/css/admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, ACS_PLUGIN_ROOT_URL . 'assets/css/main.css', array(), $this->version, 'all' );
 
 	}
 
