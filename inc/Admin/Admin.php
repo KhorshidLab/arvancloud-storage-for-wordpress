@@ -143,6 +143,15 @@ class Admin {
 
 		add_submenu_page(
 			'wp-arvancloud-storage',
+			__( 'Styles', 'arvancloud-object-storage' ),
+			__( 'Styles', 'arvancloud-object-storage' ),
+			'manage_options',
+			ACS_SLUG . '-styles',
+			__CLASS__ . '::styles_page'
+		);
+
+		add_submenu_page(
+			'wp-arvancloud-storage',
 			__( 'About ArvanCloud', 'arvancloud-object-storage' ),
 			__( 'About', 'arvancloud-object-storage' ),
 			'manage_options',
@@ -160,6 +169,12 @@ class Admin {
 	public static function settings_page() {
 
 		Partials::settings();
+
+    }
+
+	public static function styles_page() {
+
+		Partials::styles();
 
     }
 
