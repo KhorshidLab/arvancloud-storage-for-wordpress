@@ -41,3 +41,27 @@
     ساخت صندوقچه
   </button>
 </div>
+<div class="obs-content-wrapper">
+  <div class="obs-form-radio">
+    <input class="obs-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <div class="obs-custom-input"></div>
+  </div>
+  <div class="obs-form-radio">
+    <input class="obs-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option2" checked>
+    <div class="obs-custom-input"></div>
+  </div>
+  <div class="obs-form-radio disabled">
+    <input class="obs-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option3" checked>
+    <div class="obs-custom-input"></div>
+  </div>
+</div>
+<div class="obs-content-wrapper">
+  <div class="obs-form-check">
+    <input class="obs-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <div class="obs-custom-input"></div>
+  </div>
+  <div class="obs-form-check disabled">
+    <input class="obs-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <div class="obs-custom-input"></div>
+  </div>
+</div>
