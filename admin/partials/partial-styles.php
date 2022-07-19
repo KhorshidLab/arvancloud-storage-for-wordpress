@@ -79,3 +79,15 @@
     <div class="obs-custom-input"></div>
   </div>
 </div>
+<div class="obs-content-wrapper">
+  <ul class="obs-social-links">
+    <li class="social-link-item">
+      <a class="social-link" href="#">
+        <svg class="icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.6668 1.33337L7.3335 8.66671" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.6668 1.33337L10.0002 14.6667L7.3335 8.66671L1.3335 6.00004L14.6668 1.33337Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </li>
+  </ul>
+</div>

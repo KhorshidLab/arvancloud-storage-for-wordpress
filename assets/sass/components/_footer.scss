@@ -1,0 +1,33 @@
+.obs-social-links {
+  display: flex;
+  align-items: center;
+
+  .social-link-item {
+    margin-bottom: 0;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: var(--green-50);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--green-100);
+    }
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    color: var(--gray-900);
+  }
+}
