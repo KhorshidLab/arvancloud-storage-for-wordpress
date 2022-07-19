@@ -132,6 +132,26 @@
   }
 }
 
+.obs-btn-add-bucket {
+  @extend .obs-btn-primary-outline;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-inline-end: 8px;
+    color: var(--green-500);
+  }
+
+  &.loading .icon {
+    display: none;
+  }
+}
+
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotateZ(0);
