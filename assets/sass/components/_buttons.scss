@@ -1,0 +1,68 @@
+.obs-btn-primary {
+  border: 1.5px solid var(--green-500);
+  background-color: var(--green-500);
+  border-radius: 12px;
+  padding: 11px 15px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 3px var(--green-200);
+  }
+
+  &:active,
+  &:focus-within {
+    box-shadow: none;
+    background-color: var(--green-600);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &.loading {
+    color: var(--green-500);
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: " ";
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    &::before {
+      width: 12px;
+      height: 12px;
+      background-color: var(--green-500);
+      z-index: 2;
+    }
+
+    &::after {
+      width: 16px;
+      height: 16px;
+      background-image: conic-gradient(from 180deg at 50% 50%, #fff 0deg, rgba(255, 255, 255, 0) 360deg);
+      animation: spin 0.5s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotateZ(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotateZ(-360deg);
+  }
+}
