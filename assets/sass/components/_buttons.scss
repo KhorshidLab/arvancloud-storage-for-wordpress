@@ -106,6 +106,32 @@
   }
 }
 
+.obs-btn-danger {
+  @extend .obs-btn-primary;
+
+  border: 1.5px solid var(--red-500);
+  background-color: var(--red-500);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 3px var(--red-200);
+  }
+
+  &:active,
+  &:focus-within {
+    box-shadow: none;
+    background-color: var(--red-600);
+  }
+
+  &.loading {
+    color: var(--red-500);
+
+    &::before {
+      background-color: var(--red-500);
+    }
+  }
+}
+
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotateZ(0);
