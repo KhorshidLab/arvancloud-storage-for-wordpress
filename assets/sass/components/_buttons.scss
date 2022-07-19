@@ -57,6 +57,33 @@
   }
 }
 
+.obs-btn-primary-outline {
+  @extend .obs-btn-primary;
+
+  background-color: transparent;
+  color: var(--green-500);
+  padding-right: 23px;
+  padding-left: 23px;
+
+  &:active,
+  &:focus-within {
+    box-shadow: none;
+    background-color: var(--green-100);
+  }
+
+  &.loading {
+    color: transparent;
+
+    &::before {
+      background-color: transparent;
+    }
+
+    &::after {
+      background: url("../img/loading-bg-green.png") center/contain no-repeat;
+    }
+  }
+}
+
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotateZ(0);
