@@ -79,3 +79,115 @@
     }
   }
 }
+
+.obs-form-toggle {
+  display: inline-block;
+  width: 42px;
+  height: 20px;
+  position: relative;
+
+  .obs-input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 42px;
+    height: 20px;
+
+    &::before {
+      display: none !important;
+    }
+  }
+
+  .obs-custom-input {
+    width: 42px;
+    height: 20px;
+    background-color: var(--gray-200);
+    border-radius: 32px;
+    position: relative;
+    z-index: -1;
+
+    &::before {
+      content: " ";
+      display: block;
+      width: 24px;
+      height: 16px;
+      border-radius: 32px;
+      position: absolute;
+      top: 2px;
+      left: 3px;
+      background: url("../img/dots.svg") center/auto no-repeat #fff;
+      transform: translateX(0);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  .obs-input:checked + .obs-custom-input {
+    background-color: var(--green-500);
+
+    &::before {
+      transform: translateX(13px);
+    }
+  }
+
+  .obs-input:checked:hover + .obs-custom-input,
+  .obs-input:checked:focus + .obs-custom-input {
+    box-shadow: 0 0 0 2px var(--green-200);
+  }
+
+  .obs-input:checked:hover + .obs-custom-input,
+  .obs-input:checked:focus-within + .obs-custom-input {
+    box-shadow: none;
+    background-color: var(--green-600);
+  }
+
+  .obs-input:hover + .obs-custom-input,
+  .obs-input:focus + .obs-custom-input {
+    box-shadow: 0 0 0 2px rgba(178, 194, 214, 0.3);
+  }
+
+  &.disabled .obs-custom-input::before {
+    opacity: 0.6;
+  }
+
+  &.disabled .obs-input {
+    pointer-events: none;
+  }
+
+  &.loading .obs-input + .obs-custom-input {
+    &::after {
+      content: " ";
+      display: block;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      left: 8px;
+      top: 5px;
+      background: url("../img/loading-bg-gray.png") center/contain no-repeat;
+      animation: toggle-spin 0.5s linear infinite;
+    }
+
+    &::before {
+      background-image: none;
+    }
+  }
+
+  &.loading .obs-input:checked + .obs-custom-input {
+    &::after {
+      left: unset;
+      right: 8px;
+      background-image: url("../img/loading-bg-green.png");
+    }
+  }
+}
+
+@keyframes toggle-spin {
+  from {
+    transform: rotateZ(0);
+  }
+
+  to {
+    transform: rotateZ(-360deg);
+  }
+}

@@ -65,3 +65,17 @@
     <div class="obs-custom-input"></div>
   </div>
 </div>
+<div class="obs-content-wrapper">
+  <div class="obs-form-toggle">
+    <input class="obs-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <div class="obs-custom-input"></div>
+  </div>
+  <div class="obs-form-toggle loading">
+    <input class="obs-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option" checked>
+    <div class="obs-custom-input"></div>
+  </div>
+  <div class="obs-form-toggle disabled">
+    <input class="obs-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option">
+    <div class="obs-custom-input"></div>
+  </div>
+</div>
