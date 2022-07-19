@@ -84,6 +84,28 @@
   }
 }
 
+.obs-btn-secondary-outline {
+  @extend .obs-btn-primary-outline;
+
+  color: var(--gray-400);
+  border-color: var(--gray-400);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 3px var(--gray-200);
+  }
+
+  &:active,
+  &:focus-within {
+    box-shadow: none;
+    background-color: var(--gray-100);
+  }
+
+  &.loading::after {
+    background-image: url("../img/loading-bg-gray.png");
+  }
+}
+
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotateZ(0);
