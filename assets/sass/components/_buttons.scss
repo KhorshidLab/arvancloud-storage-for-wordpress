@@ -12,6 +12,7 @@
 
   &:hover,
   &:focus {
+    color: #fff;
     box-shadow: 0 0 0 3px var(--green-200);
   }
 
@@ -64,6 +65,11 @@
   color: var(--green-500);
   padding-right: 23px;
   padding-left: 23px;
+
+  &:hover,
+  &:focus {
+    color: var(--green-500);
+  }
 
   &:active,
   &:focus-within {
