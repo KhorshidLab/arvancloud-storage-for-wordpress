@@ -173,3 +173,9 @@
     </div>
   </div>
 </div>
+<div class="obs-content-wrapper">
+  <div class="obs-tab">
+    <span class="obs-tab-item active">تنظیمات</span>
+    <span class="obs-tab-item">عملیات</span>
+  </div>
+</div>

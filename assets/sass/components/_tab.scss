@@ -1,0 +1,25 @@
+.obs-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 16px;
+  background-color: var(--gray-25);
+}
+
+.obs-tab-item {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 12px;
+  color: var(--gray-700);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+
+  &.active {
+    background-color: var(--green-500);
+    color: #fff;
+    font-weight: 700;
+  }
+}
