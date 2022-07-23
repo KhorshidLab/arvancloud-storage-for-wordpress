@@ -1,0 +1,61 @@
+.obs-modal.obs-modal-progress {
+  max-width: 502px;
+
+  .obs-modal-desc {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-800);
+    margin-bottom: 16px;
+    text-align: start;
+  }
+
+  .obs-btn-primary {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
+.obs-progress {
+  border-radius: 12px;
+  background-color: var(--gray-25);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.obs-progress-percent {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--green-500);
+  margin-inline-end: 16px;
+}
+
+.obs-progress-bar {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.obs-progress-fill {
+  height: 8px;
+  border-radius: 12px;
+  background-color: var(--green-500);
+}
+
+.obs-upload-info {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--green-500);
+}
+
+.obs-upload-size {
+  margin-inline-end: 8px;
+}

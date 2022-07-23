@@ -179,3 +179,23 @@
     <span class="obs-tab-item">عملیات</span>
   </div>
 </div>
+<div class="obs-content-wrapper">
+  <div class="obs-modal obs-modal-progress">
+    <div class="obs-modal-title">در حال بارگذاری</div>
+    <div class="obs-modal-desc">تمامی فایل های شما در حال بارگذاری در صندوقچه مورد نظر می باشند.</div>
+    <div class="obs-upload-info">
+      <span class="obs-upload-size">(44 مگابایت از 112 مگابایت)</span>
+      <span class="obs-upload-count">20  از 142</span>
+    </div>
+    <div class="obs-progress">
+      <span class="obs-progress-percent">78٪</span>
+      <div class="obs-progress-bar">
+        <div class="obs-progress-fill" style="width: 25%"></div>
+      </div>
+    </div>
+    <div class="obs-modal-actions">
+      <button class="obs-btn-primary-outline">انصراف</button>
+      <button class="obs-btn-primary">توقف</button>
+    </div>
+  </div>
+</div>
