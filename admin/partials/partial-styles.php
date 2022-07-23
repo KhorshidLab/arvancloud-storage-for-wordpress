@@ -199,3 +199,20 @@
     </div>
   </div>
 </div>
+<div class="obs-content-wrapper" style="background-color: #fff">
+  <div class="obs-box-outline d-flex align-items-center justify-content-between">
+    <div>
+      <div class="obs-box-outline-title">صندوقچه:</div>
+      <div class="obs-box-outline-desc">azmayes2</div>
+    </div>
+    <div>
+      <span class="obs-badge obs-badge-gray me-2">
+        20 مگابایت
+      </span>
+      <span class="obs-badge obs-badge-gray me-3">
+        5 آبجکت
+      </span>
+      <a class="obs-btn-primary-outline" href="#">تغییر صندوقچه</a>
+    </div>
+  </div>
+</div>
